@@ -4,7 +4,7 @@ require 'digest/sha1'
 
 module CouponCode
   SYMBOL = '123456789ABCDEFGHJKLMNPQRTUVWXY'
-  PARTS  = 3
+  PARTS  = 2
   LENGTH = 4
 
   def self.generate(options = { parts: PARTS })
@@ -19,7 +19,7 @@ module CouponCode
       part << checkdigit_alg_1(part, i)
       parts << part
     end
-    parts.join('-')
+    parts.join('')
   end
 
   def self.validate(orig, num_parts = PARTS)
@@ -32,7 +32,7 @@ module CouponCode
       check = part[-1]
       return if check != checkdigit_alg_1(data, i + 1)
     end
-    parts.join('-')
+    parts.join('')
   end
 
   def self.checkdigit_alg_1(orig, check)
