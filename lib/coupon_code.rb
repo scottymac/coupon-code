@@ -1,9 +1,9 @@
-require "coupon_code/version"
+# require "coupon_code/version"
 require 'securerandom'
 require 'digest/sha1'
 
 module CouponCode
-  SYMBOL = '0123456789ABCDEFGHJKLMNPQRTUVWXY'
+  SYMBOL = '123456789ABCDEFGHJKLMNPQRTUVWXY'
   PARTS  = 3
   LENGTH = 4
 
@@ -14,7 +14,7 @@ module CouponCode
     (1..num_parts).each do |i|
       part = ''
       (1...LENGTH).each do |j|
-        part << randome_symbol
+        part << random_symbol
       end
       part << checkdigit_alg_1(part, i)
       parts << part
@@ -44,7 +44,7 @@ module CouponCode
     SYMBOL[ check % 31 ]
   end
 
-  def self.randome_symbol
+  def self.random_symbol
     SYMBOL[ rand(SYMBOL.length) ]
   end
 end
