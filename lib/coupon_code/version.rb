@@ -1,3 +1,3 @@
-module CouponCode
+module LOLCouponCode
   VERSION = "0.0.2"
 end

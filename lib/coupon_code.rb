@@ -2,7 +2,7 @@
 require 'securerandom'
 require 'digest/sha1'
 
-module CouponCode
+module LOLCouponCode
   SYMBOL = '123456789ABCDEFGHJKLMNPQRTUVWXY'
   PARTS  = 2
   LENGTH = 4

@@ -5,7 +5,7 @@ require 'coupon_code/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'coupon_code'
-  spec.version       = CouponCode::VERSION
+  spec.version       = LOLCouponCode::VERSION
   spec.authors       = ['Sanghyun Park']
   spec.email         = ['sh@baxang.com']
   spec.summary       = %q{Generate and validate coupon codes.}
